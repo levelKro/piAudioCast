@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>piAudioCast</title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript" src="ui.js"></script>
+		<link rel="stylesheet" href="ui.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header">
+				<div class="controls">
+					<div id="output" class="output"></div>				
+					<div onclick="getApi('output','/run/reboot','')" class="option"><img src="imgs/reboot.png" /></div>
+					<div onclick="getApi('output','/run/poweroff','')" class="option"><img src="imgs/power.png" /></div>
+					<div onclick="showStats()" class="option"><img src="imgs/stats.png" /></div>
+					<div class="line"><input type="password" name="password" id="password" /></div>
+				</div>
+				<a href="/" class="logo"><img src="logo.png" /> <span><b style="color:#db1d66">pi</b>AudioCast</span></a>
+				
+				<div class="stats" id="stats" style="display:none;">
+					<img src="imgs/stats.png" />
+					<span>Uptime: <b id="statsSYSUptime">loading datas...</b><span>
+					<span>Speed: <b id="statsCPUSpeed">---MHz</b> (<b id="statsCPUTemp">--°C</b>)<span>
+					<span>Load: <b id="statsSYSLoad"> x.xx, x.xx, x.xx</b><span>
+					<span>Free RAM: <b id="statsRAMFree"> ---MB</b>/<b id="statsRAMTotal"> ---MB</b><span>
+					<span>IP Address: <b id="statsSYSIP"> xxx.xxx.xxx.xxx</b><span>
+				</div>
+			</div>
+			<div class="content">
+
+				<div class="player">
+					<span><b id="playerTime">0:00:00</b> / <b id="playerTimeTotal">0:00:00</b></span>
+					<span><b id="playerTitle">loading...</b></span>
+					<div id="playerPosition"></div>
+					<span><img src="imgs/sound.png" id="playerMute"/> <b id="playerVolume">??%</b></span>
+					<div class="playerControls">
+						<div class="line">
+							<div onclick="getApiPlayer('output','/api/volume','?v=minus')" class="option"><img src="imgs/volume-down.png"/></div>
+							<div onclick="getApiPlayer('output','/api/volume','?v=plus')" class="option"><img src="imgs/volume-up.png" /></div>
+							<div onclick="getApiPlayer('output','/api/volume','?v=mute')" class="option"><img src="imgs/mute.png" /></div>
+						</div>
+						<div class="line"><div onclick="getApiPlayer('output','/api/play','?file='+document.getElementById('playerFile').value)" class="option"><input type="text" id="playerFile" value="" placeholder="Enter URL" class="playerFile"/> <img src="imgs/play.png" /></div></div>
+						<div class="line">
+							<div onclick="getApiPlayer('output','/api/back','')" class="option"><img src="imgs/back.png" /></div>
+							<div onclick="getApiPlayer('output','/api/pause','')" class="option"><img src="imgs/play.png" id="playerPlaying"/></div>
+							<div onclick="getApiPlayer('output','/api/stop','')" class="option"><img src="imgs/stop.png" /></div>
+							<div onclick="getApiPlayer('output','/api/next','')" class="option"><img src="imgs/next.png" /></div>
+							<div onclick="getApiPlayer('output','/api/play','?file=http://radio.levelkro.net:8000/1')" class="option"><img src="imgs/streaming.png" /></div>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" value="" id="listPath"/>
+				<input type="hidden" value="0" id="playlistmode"/>
+				<div onclick="getPlaylistMode()" class="dirAction"><img src="imgs/playlist.png" id="playerPlaylist" /></div>
+				<div onclick="getApiList('output',document.getElementById('listPath').value)" class="dirAction"><img src="imgs/sync.png" /></div>
+				<ul class="listDirs" id="listDirs">
+				</ul>
+				<ul class="listFiles" id="listFiles">
+				</ul>
+			</div>
+			<div class="footer">
+				piAudioCast © 2022 Mathieu <i>levelKro</i> Légaré
+			</div>
+		</div>
+	</body>
+</html>
