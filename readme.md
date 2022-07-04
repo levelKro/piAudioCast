@@ -2,6 +2,8 @@
 
 This project is for turn a Raspberry Pi into a small Audio Player controled by Web interface. Can support local files, usb files and Internet radio.
 
+![Screenshot](screenshot-22-7-4.png)
+
 ## Features
 
 * Play audio file like WAV, MP3, AUD, M4A, WMA, MID, FLAC, OGG (suggest file extension if needed)
