@@ -8,7 +8,7 @@ This project is for turn a Raspberry Pi into a small Audio Player controled by W
 
 * Play audio file like WAV, MP3, AUD, M4A, WMA, MID, FLAC, OGG (suggest file extension if needed)
 * Play Internet Radio over HTTP, like Shoutcast and Icecast
-* Play all file in a folder (not sub directory, but planned)
+* Play all filex in a folder (not sub directory, but planned)
 * Web Interface with all controls
 * Auto-install new Wifi configuration by USB drive
 * Compatible with WM8960 hat

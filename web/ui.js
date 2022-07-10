@@ -1,5 +1,6 @@
 ga = [];
 gap = [];
+gPlayerTimeOut = ""
 function getApi(id,action,values) { 
 	if(!values) values="?tm="+Math.random();
 	else values=values+"&tm="+Math.random();
@@ -160,13 +161,22 @@ function getPlayer(id) {
 			else{
 				document.getElementById(id).innerHTML=values.error;
 			}	
+			clearTimeout(gPlayerTimeOut);
 			setTimeout("getPlayer('output')",1000);
+
 		}
 	}
 	gPlayer.open("GET","api/info?"+Math.random(),true);
 	gPlayer.send();	
-}
+	// Timeout to abort in 5 seconds
+	gPlayerTimeOut=setTimeout("ajaxTimeout(gPlayer)",5000);
 
+}
+function ajaxTimeout(callName){
+   callName.abort();
+   document.getElementById("output").innerHTML="piAudioCast timeout";
+   document.getElementById("playerPosition").innerHTML="Connection to piAudioCast lost.";
+}	
 function showStats(){
 	if(document.getElementById("stats").style.display=="none"){
 		document.getElementById("stats").style.display="inline-block";
