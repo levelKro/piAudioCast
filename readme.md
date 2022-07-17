@@ -35,14 +35,15 @@ When is done, open `raspi-config` and set the audio output on the jack/device do
 
 ```
 cd /home/pi
-sudo apt -qq update
-sudo apt -qq upgrade -y
+sudo apt update
+sudo apt upgrade -y
 echo "** .. Install requirements"
-sudo apt -qq install -y git wget usbmount
-sudo apt -qq install -y python3-dev python3-pip samba espeak espeak-ng vlc python3-vlc python3-numpy
+sudo apt install -y git wget usbmount
+sudo apt install -y python3-dev python3-pip samba espeak espeak-ng vlc python3-vlc python3-numpy
 sudo pip3 install --upgrade pip setuptools wheel
 sudo pip3 install numpy python-vlc psutil gpiozero
 git clone https://github.com/levelKro/piaudiocast.git
+mkdir /home/pi/music
 ```
 
 ### Autostart of piAudioCast
