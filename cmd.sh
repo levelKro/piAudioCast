@@ -15,7 +15,9 @@ case "$1" in
 		if [ "$2" = "start" ]
 		then
 			echo "Starting piAudioCast"
-			amixer set Headphone 90%
+			amixer -q set "Headphone" 95%
+			amixer -q set "Speaker" 95%
+			amixer -q set "Playback" 100%
 		    sudo -E /usr/bin/python3 $workdir/picast.py >$workdir/picast.log 2>&1 &
 		elif [ "$2" = "stop" ]
 		then
@@ -55,7 +57,9 @@ case "$1" in
 			fi
 			sleep 2
 			echo "Starting piAudioCast"
-			amixer set Headphone 90%
+			amixer -q set "Headphone" 95%
+			amixer -q set "Speaker" 95%
+			amixer -q set "Playback" 100%
 			sudo -E /usr/bin/python3 $workdir/picast.py >$workdir/picast.log 2>&1 &
 		fi
 	;;
