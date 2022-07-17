@@ -110,4 +110,4 @@ The script come with sound for help the user to known what the device do. One so
 
 ## How to use
 
-Juste boot the device and wait, when you ear the boot sound, you can connect to Raspberry Pi IP address on normal HTTP port, like http://192.168.0.10 or http://piaudiocast (if `piaudiocast` is the hosttname of your device).
+Just boot the device and wait, when you ear the boot sound, you can connect to Raspberry Pi IP address on normal HTTP port, like http://192.168.0.10 or http://piaudiocast (if `piaudiocast` is the hostname of your device).
