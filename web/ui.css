@@ -2,6 +2,7 @@ body, html {
 	background:#000;
 	font-family:Arial;
 	color:#fff;
+	font-size:1em;
 }
 a {
 	color:#1a5fd6;
@@ -12,10 +13,9 @@ a:hover {
 }
 .wrapper {
 	display:block;
-	margin:20px auto;
+	margin:2em auto;
 	min-width:480px;
-	max-width:720px;
-	height: 100% auto;
+	height: 100%;
 	background:#131a26;
 }
 .header {
@@ -31,31 +31,57 @@ a:hover {
 	background:#131a26;
 }
 .content {
-	margin:40px;
+	margin:2em;
 	display:block;
-	font-size:18px;
+	font-size:2em;
 	text-align:center;
 }
 .footer {
-	margin:10px;
+	margin:10px 0 0 0;
 	border-top:1px solid #0b0b0d;
 	display:block;
 	text-align:center;
-	font-size:14px;
+	font-size:0.8em;
+	padding:0;
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	right:0;
+	background:#131a26;
+}
+.output {
+	color:#fff;
+	background:#0b0b0d;
+	border:1px solid #1c1c21;
+	min-height:10px;
+	font-size:0.9em;
+	line-height:0.8;
 	padding:5px;
+	font-family:Courier;
+	margin:0 0 5px 0;
+	display:block;
+	text-align:left;
+}
+.output::before {
+	content:'Output:> ';
+	color:#1b6af2
+}
+.output::after {
+	content:'_';
+	color:#1b6af2
 }
 a.logo span {
-	font-size:30px;
+	font-size:8em;
 	display:inline block;
 	color:#fff;
 }
 a.logo img {
 	float:left;
-	height:36px;
+	height:10em;
 	margin:05px 10px 5px 5px;
 }
 a.logo small {
-	font-size:10px;
+	font-size:4em;
 	display:block;
 	color:#ccc;
 }
@@ -69,8 +95,8 @@ a.logo small {
 	color:#eee;
 }
 .controls div.option {
-	width: 24px;
-	height:24px;
+	width: 10em;
+	height:10em;
 	overflow:hidden;
 	display:inline-block;
 	margin:0 2px;
@@ -81,8 +107,8 @@ a.logo small {
 	border:1px solid #0b0b0d;
 }
 .controls div.option img {
-	width: 24px;
-	height:24px;
+	width: 8em;
+	height:8em;
 }
 .controls div.option:hover {
 	color:#fff;
@@ -91,13 +117,13 @@ a.logo small {
 	cursor:pointer;
 }
 #playerVolume {
-	font-size:32px;
+	font-size:10em;
 	color:#ff9900;
 }
 #playerMute {
-	width:24px;
+	width:10em;
 	margin:0;
-	height:24px;
+	height:10em;
 	padding:0;
 	cursor:none;
 }
@@ -116,31 +142,6 @@ input[type="password"]{
 	margin:0;
 	width:96px;
 	hieght:10px
-}
-.output {
-	color:#fff;
-	background:#0b0b0d;
-	border:1px solid #1c1c21;
-	min-height:10px;
-	font-size:8px;
-	line-height:0.8;
-	padding:5px;
-	font-family:Courier;
-	margin:0;
-	display:block;
-	text-align:left;
-	position:fixed;
-	bottom:0px;
-	left:0px;
-	right:0;
-}
-.output::before {
-	content:'Output:> ';
-	color:#1b6af2
-}
-.output::after {
-	content:'_';
-	color:#1b6af2
 }
 .stats {
 	display:inline-block;
@@ -184,8 +185,8 @@ input[type="password"]{
 }
 .player img {
 	display:inline-block;
-	width:32px;
-	height:32px;
+	width:10em;
+	height:10em;
 	cursor:pointer;
 }
 input.playerFile {

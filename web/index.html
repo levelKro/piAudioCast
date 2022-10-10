@@ -8,8 +8,7 @@
 	<body>
 		<div class="wrapper">
 			<div class="header">
-				<div class="controls">
-					<div id="output" class="output"></div>				
+				<div class="controls">			
 					<div onclick="getApi('output','/run/reboot','')" class="option"><img src="imgs/reboot.png" /></div>
 					<div onclick="getApi('output','/run/poweroff','')" class="option"><img src="imgs/power.png" /></div>
 					<div onclick="showStats()" class="option"><img src="imgs/stats.png" /></div>
@@ -59,6 +58,7 @@
 				</ul>
 			</div>
 			<div class="footer">
+				<div id="output" class="output"></div>	
 				piAudioCast © 2022 Mathieu <i>levelKro</i> Légaré
 			</div>
 		</div>
